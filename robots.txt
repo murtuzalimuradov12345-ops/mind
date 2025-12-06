@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://murtuzalimuradov12345-ops.github.io/mind/sitemap.xml
