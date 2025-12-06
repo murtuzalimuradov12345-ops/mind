@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космический тест IQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Страница 1: Обложка -->
+    <div id="cover-page" class="page active">
+        <div class="container">
+            <h1 class="fade-in">Космический тест IQ</h1>
+            <p class="fade-in delay-1">Проверьте свои знания о космосе и астрономии</p>
+            <button id="start-btn" class="btn fade-in delay-2">Начать тест</button>
+        </div>
+    </div>
+
+    <!-- Страница 2: Тест -->
+    <div id="test-page" class="page">
+        <div class="container">
+            <h2 class="fade-in">Тест на знание космоса</h2>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div id="questions-container"></div>
+            <button id="submit-btn" class="btn">Получить результат</button>
+        </div>
+    </div>
+
+    <!-- Страница 3: Результат -->
+    <div id="result-page" class="page">
+        <div class="container">
+            <h2 class="fade-in">Ваш результат</h2>
+            <div id="result-container" class="result-container">
+                <div id="score" class="score"></div>
+                <div id="level" class="level"></div>
+                <div id="feedback" class="feedback"></div>
+            </div>
+            <button id="restart-btn" class="btn">Пройти тест снова</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

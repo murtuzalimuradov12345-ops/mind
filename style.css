@@ -1,0 +1,260 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0a0a1a;
+    color: #e0e0ff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.page.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Анимации */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Обложка */
+#cover-page {
+    text-align: center;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+}
+
+#cover-page h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #6a5af9, #d66efd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(106, 90, 249, 0.3);
+}
+
+#cover-page p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #a0a0ff;
+}
+
+/* Кнопки */
+.btn {
+    background: linear-gradient(135deg, #6a5af9, #d66efd);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(106, 90, 249, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(106, 90, 249, 0.6);
+}
+
+/* Контейнер вопросов */
+#questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 2rem 0;
+}
+
+/* Предупреждение о сложности */
+.difficulty-warning {
+    background: rgba(40, 40, 80, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.difficulty-warning.easy {
+    border-left-color: #4CAF50;
+}
+
+.difficulty-warning.medium {
+    border-left-color: #FF9800;
+}
+
+.difficulty-warning.hard {
+    border-left-color: #F44336;
+}
+
+.warning-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.warning-text {
+    color: #a0a0ff;
+}
+
+/* Вопросы */
+.question {
+    background: rgba(30, 30, 60, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(106, 90, 249, 0.3);
+}
+
+.question:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 90, 249, 0.2);
+}
+
+.question-text {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #e0e0ff;
+    font-size: 1.1rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(40, 40, 80, 0.5);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.option:hover {
+    background: rgba(106, 90, 249, 0.2);
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.option.correct {
+    background: rgba(76, 175, 80, 0.3);
+    border: 1px solid #4CAF50;
+}
+
+.option.incorrect {
+    background: rgba(244, 67, 54, 0.3);
+    border: 1px solid #F44336;
+}
+
+
+/* Страница результатов */
+.result-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.score {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #6a5af9, #d66efd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.level {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #a0a0ff;
+}
+
+.feedback {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    #cover-page h1 {
+        font-size: 2.5rem;
+    }
+    
+    .score {
+        font-size: 3rem;
+    }
+}
+
+/* Прогресс-бар */
+.progress-container {
+    width: 100%;
+    background-color: rgba(40, 40, 80, 0.5);
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    background: linear-gradient(135deg, #6a5af9, #d66efd);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Индикатор выполнения */
+.progress-text {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #a0a0ff;
+}
